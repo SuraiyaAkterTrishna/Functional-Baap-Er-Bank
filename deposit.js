@@ -2,6 +2,7 @@ document.getElementById('deposit-btn').addEventListener('click', function(){
     const depositField = document.getElementById('deposit-field');
     const newDepositAmountString = depositField.value;
     const newDepositAmount = parseFloat(newDepositAmountString);
+    depositField.value = '';
 
     const depositElement = document.getElementById('deposit-element');
     const previousDepositString = depositElement.innerText;
@@ -17,5 +18,5 @@ document.getElementById('deposit-btn').addEventListener('click', function(){
     const updateBalance = previousBalance + newDepositAmount;
     previousBalanceField.innerText = updateBalance;
 
-    depositField.value = ''
+    
 })

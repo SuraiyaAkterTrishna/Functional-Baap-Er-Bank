@@ -2,6 +2,7 @@ document.getElementById("withdraw-btn").addEventListener("click", function () {
   const withdrawField = document.getElementById("withdraw-field");
   let newWithdrawAmountString = withdrawField.value;
   const newWithdrawAmount = parseFloat(newWithdrawAmountString);
+  withdrawField.value = "";
 
   const withdrawElement = document.getElementById("withdraw-element");
   const previousWithdrawString = withdrawElement.innerText;
@@ -20,5 +21,5 @@ document.getElementById("withdraw-btn").addEventListener("click", function () {
     alert("Your balance is not sufficient for withdraw.");
   }
 
-  withdrawField.value = "";
+  
 });
