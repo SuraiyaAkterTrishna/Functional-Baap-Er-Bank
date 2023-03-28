@@ -11,13 +11,17 @@ function getElementValueById(elementId){
     const textElementValue = parseFloat(textElementValueString);
     return textElementValue;
 }
-function setTextElementValueById(elementId){
-    
+function setTextElementValueById(elementId, newValue){
+    const textElement = document.getElementById(elementId);
+    textElement.innerText = newValue;
 }
 document.getElementById('deposit-btn').addEventListener('click', function(){
     const newDepositAmount = getInputFieldValueById('deposit-field');
-    
     const previousDepositAmount = getElementValueById('deposit-element');
-    
+    const newDepositTotal = newDepositAmount + previousDepositAmount;
+    setTextElementValueById('deposit-element', newDepositTotal);
 
+    const previousBalanceTotal = getElementValueById('balance');
+    const newBalanceTotal = previousBalanceTotal + newDepositAmount;
+    setTextElementValueById('balance', newBalanceTotal);
 })
